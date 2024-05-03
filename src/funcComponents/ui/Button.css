@@ -1,0 +1,56 @@
+:root {
+  --clr-button: #e63946;
+  --clr-textB: #f4ede5;
+
+  text-align: center;
+}
+
+.login {
+  width: 300px;
+  height: 200px;
+  font-size: 14px;
+  background-color: brown;
+  cursor: pointer;
+}
+
+.save {
+  color: var(--clr-button);
+  padding: 0.5rem;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  margin: auto;
+  border: 0.15rem solid var(--clr-button);
+  border-radius: 0.5rem;
+}
+
+@keyframes color {
+  from {
+    color: var(--clr-button);
+  }
+  to {
+    color: var(--clr-textB);
+  }
+}
+
+.save:hover {
+  background-color: var(--clr-button);
+  color: var(--clr-textB);
+  border-radius: 0.5rem;
+  animation-duration: 0.2s;
+  animation-name: color;
+  transition: 0.2s;
+}
+
+.delete {
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  cursor: pointer;
+}
+
+@media (min-width: 856px) {
+  .save {
+    width: 11rem;
+  }
+}

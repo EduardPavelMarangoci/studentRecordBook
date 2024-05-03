@@ -1,0 +1,2 @@
+-> npx create-react-app 'nome_progetto'
+-> npm start --> avvio server locale

@@ -1,0 +1,41 @@
+Realizzare una piattaforma web in React (Mobile First) che calcoli il risultato dell’esame di uno studente e ne tenga traccia per realizzare un libretto digitale universitario.
+
+Il programma prenderà in ingresso:
+Data dell'esame
+Il nome dell'esame
+Il voto ottenuto (variabile tra 0 e 31)
+
+Fase 1 
+
+Memorizzati questi dati procederà al calcolo del risultato finale in trentesimi procedendo come segue:
+
+se il voto dell'esame è minore (o uguale) a zero lo studente è bocciato.
+
+se il voto dell'esame è minore di 18 lo studente è bocciato.
+
+se il voto dell'esame è maggiroe di 18 lo studente è promosso.
+
+se il voto dell'esame vale 31 il sistema stampa: “30 e lode”
+
+esempio:
+
+14/03/2022 - laboratorio react - 25
+16/03/2022 - laboratorio python - 30 e lode
+20/03/2022 - interaction design - 16
+
+Rendere persistente la lsita degli esami
+
+Rendere visibile con colori differenti le bocciature e le eccellenze (30 o 30 e lode)
+
+
+Fase 2
+
+si desidera usa sezione dove mostrare: 
+
+il numero totale degli esami sostenuti, 
+media dei voti, 
+numero delle bocciature (<18) 
+numero delle eccellenze (30 o 30 e lode)
+
+NOTA:
+Se usate le PROPS nei vostri componenti dovranno esserci OBBLIGATORIAMENTE le default props e le props Type

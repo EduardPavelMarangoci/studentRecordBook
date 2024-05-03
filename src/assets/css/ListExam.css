@@ -1,0 +1,60 @@
+.green { 
+  color: green;
+  font-weight: bold;
+}
+  
+.red {
+  color: red;
+  font-weight: bold;
+}
+  
+.brown {
+  color: #f7b900;
+  font-weight: bold;
+}
+
+.table {
+  width: 70%;
+  margin: auto;
+}
+
+.rdt_TableCell, .rdt_TableCol{
+  justify-content: center;
+
+}
+
+.table tr {
+  border-bottom: 1px solid lightgrey;
+}
+
+.table td {
+  font-size: .7rem;
+}
+.colt {
+  font-weight:500;
+}
+
+
+section {
+  width: 70%;
+  margin: auto;
+}
+
+@media (max-width: 858px){
+  section{
+    padding-top: 10rem;
+    width: 90%;
+  }
+}
+
+@media (min-height: 720px) {
+  section{
+    margin-bottom: 20rem;
+  }
+}
+
+@media (max-width: 856px) {
+  .table {
+    width: 50%;
+  }
+}

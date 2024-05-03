@@ -1,0 +1,13 @@
+:root{
+    --clr-trasparent: hsl(0, 1%, 95%);
+}
+
+input {
+    background-color: var(--clr-trasparent);
+    border: none;
+    border-radius: .2rem;
+    width: auto;
+    height: 3rem;
+    padding: .5rem;
+    margin: 1rem 0 1rem 0 !important;
+}
