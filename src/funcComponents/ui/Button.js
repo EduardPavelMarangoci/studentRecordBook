@@ -4,7 +4,6 @@ import "./Button.css";
 import PropTypes from "prop-types"; // ES6
 
 function Button(props) {
-  const { label, classCss, callbackButton, setIsTableVisible, isTableVisible } = props;
   function clickButton(event) {
     props.callbackButton();
     props.setIsTableVisible(!props.isTableVisible);

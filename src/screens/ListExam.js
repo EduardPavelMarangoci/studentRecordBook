@@ -22,7 +22,7 @@ function ListExam() {
   const [bocciature, setBocciature] = useState(0);
   const [eccellenze, setEccellenze] = useState(0);
 
-  const [isTableVisible, setIsTableVisible] = useState(false);
+  const isTableVisible = false;
 
   const columns = [
     {

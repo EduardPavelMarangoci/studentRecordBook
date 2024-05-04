@@ -8,7 +8,7 @@ import Footer from "../funcComponents/ui/Footer";
 import DataTable from "react-data-table-component";
 
 function Home() {
-  const [isTableVisible, setIsTableVisible] = useState(false);
+  const isTableVisible = false;
   let [inputDateTemp, setInputDateTemp] = useState("");
   let [inputNameTemp, setInputNameTemp] = useState("");
   let [inputVoteTemp, setInputVoteTemp] = useState(0);
