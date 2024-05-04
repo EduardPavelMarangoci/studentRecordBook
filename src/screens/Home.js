@@ -49,7 +49,7 @@ function Home() {
     },
     {
       name: "Voto",
-      selector: (row) => row.vote == 31 ? "30 e lode" : row.vote,
+      selector: (row) => row.vote === "31" ? '30 e lode' : row.vote,
       conditionalCellStyles: [
         {
           when: (row) => row.vote >= 30,
