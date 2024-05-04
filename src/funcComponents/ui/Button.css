@@ -1,6 +1,6 @@
 :root {
   --clr-button: #e63946;
-  --clr-textB: #f4ede5;
+  --clr-textB: #fff9f1;
 
   text-align: center;
 }
@@ -19,7 +19,7 @@
   background-color: transparent;
   cursor: pointer;
   font-weight: bold;
-  margin: auto;
+  margin: 2rem auto;
   border: 0.15rem solid var(--clr-button);
   border-radius: 0.5rem;
 }

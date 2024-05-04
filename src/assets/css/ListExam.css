@@ -13,9 +13,15 @@
   font-weight: bold;
 }
 
+.blue {
+  color:rgb(56, 158, 158);
+  font-weight: bold;
+}
+
 .table {
   width: 70%;
   margin: auto;
+  padding-bottom: 5rem;
 }
 
 .rdt_TableCell, .rdt_TableCol{
@@ -34,8 +40,13 @@
   font-weight:500;
 }
 
+h4 {
+  margin-bottom: 2rem !important;
+}
+
 
 section {
+  padding-top: 10rem;
   width: 70%;
   margin: auto;
 }
@@ -43,6 +54,7 @@ section {
 @media (max-width: 858px){
   section{
     padding-top: 10rem;
+    padding-bottom: 5rem;
     width: 90%;
   }
 }

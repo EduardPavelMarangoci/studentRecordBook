@@ -6,7 +6,7 @@ import PropTypes from "prop-types"; // ES6
 function Button(props) {
   function clickButton(event) {
     props.callbackButton();
-    props.setIsTableVisible(!props.isTableVisible);
+    // props.setIsTableVisible(!props.isTableVisible);
   }
 
   return (
@@ -31,9 +31,8 @@ Button.propTypes = {
   classCss: PropTypes.string,
   fontSize: PropTypes.number,
   callbackButton: PropTypes.func.isRequired,
-  setIsTableVisible: PropTypes.bool.isRequired,
-  isTableVisible: PropTypes.bool.isRequired,
-  disabled: PropTypes.bool
+  // setIsTableVisible: PropTypes.bool.isRequired,
+  // isTableVisible: PropTypes.bool.isRequired,
 };
 
 export default Button;

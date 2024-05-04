@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import "../assets/css/Home.css";
 import Button from "../funcComponents/ui/Button";
@@ -36,12 +36,12 @@ function Home() {
 
   useEffect(() => {
     localStorage.setItem("examList", JSON.stringify(state.examList));
-  },[state.examList])
+  }, [state.examList]);
 
   const columns = [
     {
       name: "Indice",
-      selector: (row,index) => index,
+      selector: (row, index) => index,
     },
     {
       name: "Nome esame",
@@ -49,10 +49,10 @@ function Home() {
     },
     {
       name: "Voto",
-      selector: (row) => (row.vote === 31 ? "30 e lode" : row.vote),
+      selector: (row) => row.vote == 31 ? "30 e lode" : row.vote,
       conditionalCellStyles: [
         {
-          when: (row) => row.vote === 31 || row.vote === 30,
+          when: (row) => row.vote >= 30,
           classNames: ["brown"],
         },
         {
@@ -75,7 +75,7 @@ function Home() {
           : "BOCCIATO",
       conditionalCellStyles: [
         {
-          when: (row) => row.vote === 31 || row.vote === 30,
+          when: (row) => row.vote >= 30,
           classNames: ["brown"],
         },
         {
@@ -147,12 +147,31 @@ function Home() {
 
   const deleteItem = () => {
     let index = inputIndex;
-    const updatedExamList = [...state.examList];
-    updatedExamList.splice(index, 1);
-    setState({
-      ...setState, // viene usato per copiare tutti i valori già presenti nell'oggetto state
-      examList: updatedExamList,
-    });
+    if (index !== -1) {
+      if (index >= 0) {
+        const updatedExamList = [...state.examList];
+        const examLength = updatedExamList.length - 1;
+        if (index <= examLength) {
+          updatedExamList.splice(index, 1);
+          setState({
+            ...setState, // viene usato per copiare tutti i valori già presenti nell'oggetto state
+            examList: updatedExamList,
+          });
+          setInputIndex(-1);
+        } else {
+          console.log("IndexDelete -> " + index);
+          console.log("exam length -> " + examLength);
+          setInputIndex(-1);
+          return window.alert("Inserisci un indice presente nella tabella");
+        }
+      } else {
+        setInputIndex(-1);
+        return window.alert("Inserisci un indice >= a 0");
+      }
+    } else {
+      setInputIndex(-1);
+      return window.alert("Inserisci un indice per cancellare un esame");
+    }
   };
 
   return (

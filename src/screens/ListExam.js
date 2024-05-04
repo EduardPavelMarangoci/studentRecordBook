@@ -22,7 +22,7 @@ function ListExam() {
   const [bocciature, setBocciature] = useState(0);
   const [eccellenze, setEccellenze] = useState(0);
 
-  const isTableVisible = false;
+  const [isTableVisible, setIsTableVisible] = useState(false);
 
   const columns = [
     {
@@ -34,7 +34,7 @@ function ListExam() {
       selector: (row) => (row.vote === 31 ? "30 e lode" : row.vote),
       conditionalCellStyles: [
         {
-          when: (row) => row.vote === 31 || row.vote === 30,
+          when: (row) => row.vote >= 30,
           classNames: ["brown"],
         },
         {
@@ -57,11 +57,11 @@ function ListExam() {
           : "BOCCIATO",
       conditionalCellStyles: [
         {
-          when: (row) => row.vote === 31 || row.vote === 30,
+          when: (row) => row.vote >= 30,
           classNames: ["brown"],
         },
         {
-          when: (row) => row.vote >= 18,
+          when: (row) => row.vote < 30 && row.vote >= 18,
           classNames: ["green"],
         },
         {
@@ -87,7 +87,7 @@ function ListExam() {
       console.warn("state.examList is empty");
       return; // Exit the function early if state.examList.examList is empty
     }
-    console.log("Type of state.examList:", typeof state.examList);
+    setIsTableVisible(!isTableVisible);
     state.examList.forEach((examList) => {
       count = count + 1;
       sum = sum + parseInt(examList.vote);
@@ -117,6 +117,8 @@ function ListExam() {
           />
         </div>
         {isTableVisible ? (
+          <>
+          <h4>Statistiche</h4>
           <table class="table">
             <thead>
               <tr>
@@ -128,24 +130,23 @@ function ListExam() {
             </thead>
             <tbody>
               <tr>
-                <td>{somma}</td>
-                <td>{numeroE}</td>
-                <td>{bocciature}</td>
-                <td>{eccellenze}</td>
+                <td className={somma >= 27 ? 'brown' : somma < 27 && somma >= 18 ? 'green' : 'red'}>{somma}</td>
+                <td className="blue">{numeroE}</td>
+                <td className="red">{bocciature}</td>
+                <td className="brown">{eccellenze}</td>
               </tr>
             </tbody>
           </table>
+          </>
         ) : (
           <div></div>
         )}
 
         <p>
           <Button
-            label={"Visualizza statistiche"}
+            label={isTableVisible ? 'Nascodi statistiche' : 'Visualizza statistiche'}
             classCss={"save"}
             callbackButton={media}
-            setIsTableVisible={isTableVisible}
-            isTableVisible={isTableVisible}
           />
         </p>
       </section>
